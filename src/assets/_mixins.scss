@@ -1,0 +1,23 @@
+@mixin media-font($default, $sm, $md, $lg) {
+  font-size: $default;
+
+  @media (min-width: 1024px) {
+    font-size: $sm;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: $md;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: $lg;
+  }
+}
+
+@mixin border-radius {
+  border-radius: 5px;
+
+  @media (min-width: 1920px) {
+    border-radius: 10px;
+  }
+}
