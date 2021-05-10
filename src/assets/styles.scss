@@ -1,6 +1,8 @@
 :root {
   --Black: #07123a;
+  --Black100: #20294E;
   --White: #fff;
+  --WhiteRgb: 255, 255, 255;
   --Green100: #0ac832;
   --Green200: #09ae2d;
   --Grey100: #82869d;
@@ -21,10 +23,12 @@ body {
 }
 
 body {
+  color: var(--White);
   margin: 0;
   padding: 0;
   font-family: Gilroy;
-  background: #20294e;
+  line-height: 1;
+  background: var(--Black);
   display: flex;
   flex-direction: column;
   overflow: hidden;
