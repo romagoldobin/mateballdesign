@@ -1,6 +1,6 @@
 <template>
   <label class="Switch">
-    <input type="checkbox" checked class="Input" />
+    <input type="checkbox" class="Input" />
     <div class="Switch__Slider">
       <div class="Toggle__Outer"><div class="Toggle__Inner"></div></div>
     </div>
@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 .Switch {
-  --labelWidth: 100px;
+  --labelWidth: 30px;
   position: relative;
   display: inline-flex;
   cursor: pointer;
@@ -35,16 +35,16 @@ export default {
 }
 
 .Input:checked + .Switch__Slider {
-  background: var(--Green);
+  background: var(--Green100);
 }
 
 .Input:checked + .Switch__Slider > .Toggle__Outer {
   transform: translateX(calc(var(--labelWidth) / 2));
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s;
 }
 
 .Label {
-  --labelWidth: 100px;
+  --labelWidth: 30px;
   cursor: pointer;
   display: flex;
   background: var(--Black);
@@ -59,7 +59,7 @@ export default {
 }
 
 .Toggle__Outer {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.5s;
   display: flex;
   background: var(--Grey200);
   border-radius: 50%;
@@ -76,6 +76,6 @@ export default {
 
 .Input:checked + .Toggle__Outer {
   transform: translateX(calc(var(--labelWidth) / 2));
-  transition: transform 0.3s ease-in-out;
+  transition: transform .5s;
 }
 </style>
