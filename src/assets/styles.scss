@@ -1,0 +1,31 @@
+:root {
+  --Black: #07123a;
+  --White: #fff;
+  --Green100: #0ac832;
+  --Green200: #09ae2d;
+  --Grey100: #82869d;
+  --Grey200: #6a6d81;
+  --Yellow100: #ffb70f;
+  --Yellow200: #e09d00;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Gilroy;
+  background: #20294e;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
