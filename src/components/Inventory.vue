@@ -15,7 +15,8 @@
         </div>
       </div>
       <div class="inventory--switchAll">
-
+        <span class="inventory--switchAll__text">Выбрать все:</span>
+        <VSwitch />
       </div>
     </section>
     <section class="inventory__body"></section>
@@ -24,8 +25,13 @@
 </template>
 
 <script>
+import VSwitch from './VSwitch.vue';
+
 export default {
   name: 'Inventory',
+  components: {
+    VSwitch,
+  },
 };
 </script>
 
@@ -35,17 +41,26 @@ export default {
   display: grid;
   grid-template-rows: auto 1fr auto;
   padding: 15px;
+
+  @media (min-width: 1920px) {
+    padding: 20px;
+  }
 }
 
 .inventory__header {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
-  grid-column-gap: 20px;
+  grid-column-gap: 10px;
   padding-bottom: 10px;
   margin-bottom: 10px;
 
   &_border {
     border-bottom: 1px solid rgba(var(--WhiteRgb), .2);
+  }
+
+  @media (min-width: 1920px) {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
   }
 }
 
@@ -72,7 +87,7 @@ export default {
 
 .inventory--info__value {
   &_selected {
-    @include media-font(14px, 14px, 16px, 18px);
+    @include media-font(14px, 12px, 14px, 18px);
     color: var(--Green100);
   }
 
@@ -82,7 +97,28 @@ export default {
   }
 }
 
-.inventory__switchAll {
+.inventory--switchAll {
+  @include media-font(8px, 8px, 10px, 12px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
+  .Switch {
+     @media (min-width: 1440px) {
+      --labelWidth: 36px;
+    }
+
+    @media (min-width: 1920px) {
+      --labelWidth: 40px;
+    }
+  }
+}
+
+.inventory--switchAll__text {
+  @include media-font(10px, 8px, 12px, 14px);
+  margin-right: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 </style>
