@@ -20,17 +20,22 @@
       </div>
     </section>
     <section class="inventory__body"></section>
-    <section class="inventory__footer"></section>
+    <section class="inventory__footer">
+      <VButton color="Green">Вывести</VButton>
+      <VButton color="Grey">Маркет</VButton>
+    </section>
   </article>
 </template>
 
 <script>
 import VSwitch from './VSwitch.vue';
+import VButton from './VButton.vue';
 
 export default {
   name: 'Inventory',
   components: {
     VSwitch,
+    VButton,
   },
 };
 </script>
@@ -69,7 +74,10 @@ export default {
 }
 
 .inventory__footer {
- padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 14px;
+  padding-top: 10px;
 }
 
 .inventory--info {
