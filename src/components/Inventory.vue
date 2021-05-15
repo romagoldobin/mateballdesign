@@ -21,8 +21,8 @@
     </section>
     <section class="inventory__body"></section>
     <section class="inventory__footer">
-      <VButton color="Green">Вывести</VButton>
-      <VButton color="Grey">Маркет</VButton>
+      <VButton color="Grey">Вывести</VButton>
+      <VButton color="Green">Маркет</VButton>
     </section>
   </article>
 </template>
