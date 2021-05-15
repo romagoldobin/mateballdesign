@@ -1,6 +1,6 @@
 <template>
-  <button class="button button_bGreen">
-      <div class="button__content button__content_bgGreen">
+  <button class="button" :class="['button_b' + color]">
+      <div class="button__content" :class="['button__content_bg' + color]">
         <slot></slot>
       </div>
     </button>
@@ -10,7 +10,7 @@
 export default {
   name: 'Vbutton',
   props: {
-    type: String,
+    color: String,
   },
 };
 </script>
@@ -26,7 +26,6 @@ export default {
   min-width: 10ch;
   font-size: 0.875em;
   font-weight: bold;
-  text-transform: uppercase;
   overflow: hidden;
   min-height: 44px;
 }
@@ -49,7 +48,11 @@ export default {
 }
 
 .button_bGreen:hover:not(:disabled) {
-  box-shadow: 0px 4px 15px rgba(10, 200, 50, 0.5);
+  box-shadow: 0px 4px 15px rgba(10, 200, 50, .5);
+}
+
+.button_bGrey:hover:not(:disabled) {
+  box-shadow: 0px 4px 15px rgba(130, 134, 157, .5);
 }
 
 .button_bYellow {
@@ -57,6 +60,14 @@ export default {
     275deg,
     var(--Yellow200) 5%,
     var(--Yellow100) 95%
+  );
+}
+
+.button_bGrey {
+  background: linear-gradient(
+    275deg,
+    var(--Grey200) 5%,
+    var(--Grey100) 95%
   );
 }
 
@@ -83,6 +94,14 @@ export default {
     275deg,
     var(--Yellow100) 5%,
     var(--Yellow200) 95%
+  );
+}
+
+.button__content_bgGrey {
+  background: linear-gradient(
+    275deg,
+    var(--Grey100) 5%,
+    var(--Grey200) 95%
   );
 }
 </style>
